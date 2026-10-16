@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />        
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"   rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{% block title %}{% endblock %}</title> 
+  </head>
+  <body>    
+    
+      {% block content %}{% endblock %}
+     <header class="menu-header">
+      <nav>
+        <a class="logo" href="/"><img src="/static/img/id-web.png" alt="ID-WEB"></a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="{{url_for('index')}}">Início</a></li>
+          <li><a href="https://osmosint.com.br/" target="_blank">Saiba +</a></li>
+          <li><a type="button" data-bs-toggle="modal" data-bs-target="#modalContato">Contato</a></li> 
+          <li><a type="button" data-bs-toggle="modal" data-bs-target="#modalDoar">Doar</a></li> 
+          <li><a class="importante" type="button" data-bs-toggle="modal" data-bs-target="#modalImportante">IMPORTANTE</a></li>
+        </ul>
+      </nav>
+    </header>
+
+<div class="modal fade" id="modalContato"  tabindex="-1" aria-labelledby="modalContatoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm ">
+    <div class="modal-content modal-content-custom bg-warning text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="modalContatoLabel">Contato:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <h6>Para dúvidas e sujestões, envie um email para: </h6>      
+        <h6><strong>investigador-webnet@proton.me</strong></h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>    
+
+
+<!-- Modal "IMPORTANTE" -->
+<div class="modal fade" id="modalImportante"  tabindex="-1" aria-labelledby="modalImportanteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-warning text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalImportanteLabel"><strong>É importante observar o seguinte:</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">        
+        <b>1</b> - O ID-WEB concentra-se na coleta de informações a partir de 
+        ferramentas ou recursos gratuitos. <br>
+        <b>2</b> - A intenção é ajudar as pessoas a encontrar recursos OSINT 
+        gratuitos. <br>
+        <b>3</b> - Alguns dos sites incluídos podem exigir cadastro ou oferecer
+         mais dados mediante pagamento. <br>
+        <b>4</b> - O conteúdo dos sites aqui indicados são de total 
+        responsabilidade de seus provedores. <br>
+        <b>5</b> - Utilize com sabedoria.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>    
+
+<!-- Modal "DOAR" --> 
+<div class="modal fade" id="modalDoar"  tabindex="-1" aria-labelledby="modalDoarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm ">
+    <div class="modal-content modal-content-custom bg-warning text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="modalDoarLabel">Doar R$ 20,00 - Agradecemos desde já a sua ajuda.</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">  
+        <a class="img-fluid mx-auto d-block" ><img src="/static/img/pix_20.png" width="400" alt="PIX-20"></a>
+        <h6>Para doar qualquer valor: </h6>      
+        <h6><strong>9a97b856-bbfb-443a-9319-9116c1996731</strong></h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>    
+
+    <script src=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js" integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA==" crossorigin="anonymous"></script>    
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="{{ url_for('static', filename='mobile-navbar.js') }}"></script>
+    
+    <footer class="mx-auto max-w-5xl px-4 pb-8 text-xs text-slate-500 text-center">
+      <a href="{{url_for('politica')}}" target="_blank">Política de Privacidade</a>
+      <a href="{{url_for('index')}}"> - Home</a> @ 2026
+    </footer>
+
+  </body>
+</html>

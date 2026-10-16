@@ -1,0 +1,537 @@
+{% extends "base.html" %} {% block title %}ID-WEB{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="container-center">
+  <div class="row">
+    <div class="col"><button type="button" class="btn btn-primary btn-sm " onclick="cnpja()">CNPJA</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirCNPJA" data-bs-target="#mCnpja">?</a></div>
+    <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="dominio()">DOMÍNIO</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirDominio" data-bs-target="#mDominio">?</a></div>
+    <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="email_vazou()">EMAIL VAZOU?</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirVazou" data-bs-target="#mVazou">?</a></div>
+    <div class="col"> <button type="button" class="btn btn-primary btn-sm"  onclick="escavador()">ESCAVADOR</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirEscavador" data-bs-target="#mEscavador">?</a></div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="checar_fatos()">FAKE NEWS?</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirChecarFatos" data-bs-target="#mChecarFatos">?</a></div>  
+    <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="google_alerta()">GOOGLE ALER</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirGoogleAlerta" data-bs-target="#mGoogleAlerta">?</a></div>
+    <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="google_avancado()">GOOGLE AVAN</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirGoogleAvancado" data-bs-target="#mGoogleAvancado">?</a></div>
+    <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="img_google()">IMG GOOGLE</button></div>
+    <div class="col"> <a href="#" class="link-secondary" id="abrirImgGoogle" data-bs-target="#mImgGoogle">?</a></div>
+  </div>  
+  <br>
+
+  <div class="row">
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="operadora()">OPERADORA</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirOperadora" data-bs-target="#mOperasdora">?</a></div>
+  <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="epieos()">OSINT</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirOsint" data-bs-target="#mOsint">?</a></div>
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="perfil_insta()">PERFIL INSTA</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirPerfilInsta" data-bs-target="#mPerfilInsta">?</a></div>
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="procon_sp()">PROCON-SP</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirProconSP" data-bs-target="#mProconSP">?</a></div>
+</div>
+<br>
+<div class="row">
+  <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="rede_cnpj()">REDE CNPJ</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirRedeCnpj" data-bs-target="#mRedeCNPJ">?</a></div>  
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="registro_br()">REGISTRO BR</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirRegistroBR" data-bs-target="#mRegistroBR">?</a></div>
+  <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="web_recorder()">SALVAR WEB</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirWebRecorder" data-bs-target="#mWebRecorder">?</a></div>
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="url_malware()">TESTAR URL</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirUrlMalware" data-bs-target="#mUrlMalware">?</a></div>
+</div>
+<br>
+<div class="row">
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="url_img()">URL IMG</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirUrlImg" data-bs-target="#mUrlImg">?</a></div>
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="valida_email()">VALIDA EMAIL</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirValidaEmail" data-bs-target="#mValidaEmail">?</a></div>
+  <div class="col"> <button type="button" class="btn btn-primary btn-sm" onclick="vazou_x()">VAZOU X?</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirVazouX" data-bs-target="#mVazouX">?</a></div>
+  <div class="col"><button type="button" class="btn btn-primary btn-sm" onclick="ver_email()">VER EMAIL</button></div>
+  <div class="col"> <a href="#" class="link-secondary" id="abrirVerEmail" data-bs-target="#mVerEmail">?</a></div>
+</div>
+<br>
+
+<div class="container-center">
+  <div class="row">
+	<div class="col"><button type="button" class="btn btn-warning btn-sm" onclick="verifact()">VERIFACT</button></div>
+	<div class="col"> <a href="#" class="link-secondary" id="abrirVerifact" data-bs-target="#mVerifact">?</a></div>
+  </div>
+</div>
+
+  <div class="container-center">
+    <br>
+    <h1 style="color: rgb(255, 193, 7);">Utilize com sabedoria.</h1>  
+    <input type="text" id="dado-pesquisa" class="input-stylized" placeholder="Digite o dado da pesquisa">
+    <div class="row">
+      <div class="col"><button class="btn btn-link btn-sm" id="btnCopiar">COPIAR</button></div>
+      <div class="col"><button onclick="document.getElementById('dado-pesquisa').value = ''" class="btn btn-link btn-sm">LIMPAR</button></div>
+    </div>
+  </div>
+
+
+
+<script>
+  document.getElementById('btnCopiar').addEventListener('click', function() {
+      var input = document.getElementById('dado-pesquisa');
+      var texto = input.value;
+      navigator.clipboard.writeText(texto).then(function() {
+          alert('Texto copiado: ' + texto);
+      }).catch(function(err) {
+          console.error('Erro ao copiar: ', err);
+      });
+  });  
+</script>
+<br>
+<br>
+</script>
+<dialog id="mCnpja" class="dialog-instr">
+  <p>CNPJA</p>
+  <p>Cadastro de empresas, endereços, contatos, CNAE, etc.</p>
+  <button id="fecharCNPJA">[x]</button>
+</dialog>
+<script>
+    const modal = document.getElementById('mCnpja');
+    const btnAbrir = document.getElementById('abrirCNPJA');
+    const btnFechar = document.getElementById('fecharCNPJA');
+    btnAbrir.addEventListener('click', () => {
+    modal.showModal();
+    });
+    btnFechar.addEventListener('click', () => {
+    modal.close();
+    });
+</script>
+
+<dialog id="mDominio" class="dialog-instr">
+    <p>DOMÍNIO</p>
+    <p>Verifica se um nome de domínio já está em uso.</p>
+    <button id="fecharDominio">[x]</button>
+</dialog>
+<script>
+    const modal1 = document.getElementById('mDominio');
+    const btnAbrir1 = document.getElementById('abrirDominio');
+    const btnFechar1 = document.getElementById('fecharDominio');
+    btnAbrir1.addEventListener('click', () => {
+    modal1.showModal();
+    });
+    btnFechar1.addEventListener('click', () => {
+    modal1.close();
+    });
+</script>
+
+<dialog id="mVazou" class="dialog-instr">
+    <p>EMAIL VAZOU?</p>
+    <p>Verifica se um endereço de e-mail está em alguma violação de dados.</p>
+    <button id="fecharVazou">[x]</button>
+</dialog>
+
+<script>
+    const modal2 = document.getElementById('mVazou');
+    const btnAbrir2 = document.getElementById('abrirVazou');
+    const btnFechar2 = document.getElementById('fecharVazou');
+    btnAbrir2.addEventListener('click', () => {
+    modal2.showModal();
+    });
+    btnFechar2.addEventListener('click', () => {
+    modal2.close();
+    });
+</script>
+
+<dialog id="mEscavador" class="dialog-instr">
+    <p>ESCAVADOR</p>
+    <p>Encontre informações jurídicas relevantes de algum nome ou empresa.</p>
+    <button id="fecharEscavador">[x]</button>
+</dialog>
+<script>
+    const modal3 = document.getElementById('mEscavador');
+    const btnAbrir3 = document.getElementById('abrirEscavador');
+    const btnFechar3 = document.getElementById('fecharEscavador');
+    btnAbrir3.addEventListener('click', () => {
+    modal3.showModal();
+    });
+    btnFechar3.addEventListener('click', () => {
+    modal3.close();
+    });
+</script>
+
+<dialog id="mGoogleAlerta" class="dialog-instr">
+    <p>GOOGLE ALERTS</p>
+    <p>Monitoramento de um nome/empresa na internet em tempo real.</p>
+    <button id="fecharGoogleAlerta">[x]</button>
+</dialog>
+<script>
+    const modal4 = document.getElementById('mGoogleAlerta');
+    const btnAbrir4 = document.getElementById('abrirGoogleAlerta');
+    const btnFechar4 = document.getElementById('fecharGoogleAlerta');
+    btnAbrir4.addEventListener('click', () => {
+    modal4.showModal();
+    });
+    btnFechar4.addEventListener('click', () => {
+    modal4.close();
+    });
+</script>
+
+<dialog id="mGoogleAvancado" class="dialog-instr">
+    <p>PESQUISA AVANÇADA GOOGLE</p>
+    <p>Conjunto de recursos e operadores para refinar buscas e encontrar informações exatas na internet.</p>
+    <button id="fecharGoogleAvancado">[x]</button>
+</dialog>
+<script>
+    const modal5 = document.getElementById('mGoogleAvancado');
+    const btnAbrir5 = document.getElementById('abrirGoogleAvancado');
+    const btnFechar5 = document.getElementById('fecharGoogleAvancado');
+    btnAbrir5.addEventListener('click', () => {
+    modal5.showModal();
+    });
+    btnFechar5.addEventListener('click', () => {
+    modal5.close();
+    });
+</script>
+
+<dialog id="mImgGoogle" class="dialog-instr">
+    <p>GOOGLE IMAGENS</p>
+    <p>Pesquisa por imagens(url) da plataforma Google.</p>
+    <button id="fecharImgGoogle">[x]</button>
+</dialog>
+<script>
+    const modal6 = document.getElementById('mImgGoogle');
+    const btnAbrir6 = document.getElementById('abrirImgGoogle');
+    const btnFechar6 = document.getElementById('fecharImgGoogle');
+    btnAbrir6.addEventListener('click', () => {
+    modal6.showModal();
+    });
+    btnFechar6.addEventListener('click', () => {
+    modal6.close();
+    });
+</script>
+
+<dialog id="mOperadora" class="dialog-instr">
+    <p>OPERADORA</p>
+    <p>Descobrir qual a operadora de um determinado número de celular/fixo.</p>
+    <button id="fecharOperadora">[x]</button>
+</dialog>
+<script>
+    const modal7 = document.getElementById('mOperadora');
+    const btnAbrir7 = document.getElementById('abrirOperadora');
+    const btnFechar7 = document.getElementById('fecharOperadora');
+    btnAbrir7.addEventListener('click', () => {
+    modal7.showModal();
+    });
+    btnFechar7.addEventListener('click', () => {
+    modal7.close();
+    });
+</script>
+
+<dialog id="mOsint" class="dialog-instr">
+    <p>OSINT</p>
+    <p>Busca reversa de e-mail e outras informações.</p>
+    <button id="fecharOsint">[x]</button>
+</dialog>
+<script>
+    const modal8 = document.getElementById('mOsint');
+    const btnAbrir8 = document.getElementById('abrirOsint');
+    const btnFechar8 = document.getElementById('fecharOsint');
+    btnAbrir8.addEventListener('click', () => {
+    modal8.showModal();
+    });
+    btnFechar8.addEventListener('click', () => {
+    modal8.close();
+    });
+</script>
+
+<dialog id="mPerfilInsta" class="dialog-instr">
+    <p>PERFIL INSTA</p>
+    <p>Visualizador de perfil anônimo do Instagram.</p>
+    <button id="fecharPerfilInsta">[x]</button>
+</dialog>
+<script>
+    const modal9= document.getElementById('mPerfilInsta');
+    const btnAbrir9= document.getElementById('abrirPerfilInsta');
+    const btnFechar9= document.getElementById('fecharPerfilInsta');
+    btnAbrir9.addEventListener('click', () => {
+    modal9.showModal();
+    });
+    btnFechar9.addEventListener('click', () => {
+    modal9.close();
+    });
+</script>
+
+<dialog id="mProconSP" class="dialog-instr">
+    <p>PROCON SP</p>
+    <p>Lista de sites que devem ser evitados.</p>
+    <button id="fecharProconSP">[x]</button>
+</dialog>
+<script>
+    const modal10 = document.getElementById('mProconSP');
+    const btnAbrir10 = document.getElementById('abrirProconSP');
+    const btnFechar10 = document.getElementById('fecharProconSP');
+    btnAbrir10.addEventListener('click', () => {
+    modal10.showModal();
+    });
+    btnFechar10.addEventListener('click', () => {
+    modal10.close();
+    });
+</script>
+
+<dialog id="mRedeCnpj" class="dialog-instr">
+    <p>REDE CNPJ</p>
+    <p>visualizar em forma gráfica os relacionamentos entre empresas e sócios.</p>
+    <button id="fecharRedeCnpj">[x]</button>
+</dialog>
+<script>
+    const modal11 = document.getElementById('mRedeCnpj');
+    const btnAbrir11 = document.getElementById('abrirRedeCnpj');
+    const btnFechar11 = document.getElementById('fecharRedeCnpj');
+    btnAbrir11.addEventListener('click', () => {
+    modal11.showModal();
+    });
+    btnFechar11.addEventListener('click', () => {
+    modal11.close();
+    });
+</script>
+
+<dialog id="mRegistroBR" class="dialog-instr">
+    <p>REGISTRO BR</p>
+    <p>Verifica se um domínio(.br) já está em uso.</p>
+    <button id="fecharRegistroBR">[x]</button>
+</dialog>
+<script>
+    const modal12 = document.getElementById('mRegistroBR');
+    const btnAbrir12 = document.getElementById('abrirRegistroBR');
+    const btnFechar12 = document.getElementById('fecharRegistroBR');
+    btnAbrir12.addEventListener('click', () => {
+    modal12.showModal();
+    });
+    btnFechar12.addEventListener('click', () => {
+    modal12.close();
+    });
+</script>
+
+<dialog id="mChecarFatos" class="dialog-instr">
+    <p>FAKE NEWS?</p>
+    <p>Um checador de fatos internacionais.</p>
+    <button id="fecharChecarFatos">[x]</button>
+</dialog>
+<script>
+    const modal13 = document.getElementById('mChecarFatos');
+    const btnAbrir13 = document.getElementById('abrirChecarFatos');
+    const btnFechar13 = document.getElementById('fecharChecarFatos');
+    btnAbrir13.addEventListener('click', () => {
+    modal13.showModal();
+    });
+    btnFechar13.addEventListener('click', () => {
+    modal13.close();
+    });
+</script>
+
+<dialog id="mUrlImg" class="dialog-instr">
+    <p>URL IMG</p>
+    <p>Rastrear imagens na internet pela url.</p>
+    <button id="fecharUrlImg">[x]</button>
+</dialog>
+<script>
+    const modal14 = document.getElementById('mUrlImg');
+    const btnAbrir14 = document.getElementById('abrirUrlImg');
+    const btnFechar14 = document.getElementById('fecharUrlImg');
+    btnAbrir14.addEventListener('click', () => {
+    modal14.showModal();
+    });
+    btnFechar14.addEventListener('click', () => {
+    modal14.close();
+    });
+</script>
+
+<dialog id="mValidaEmail" class="dialog-instr">
+    <p>BUASCA EMAIL</p>
+    <p>Encontre endereços de e-mail de empresas e pessoas.</p>
+    <button id="fecharValidaEmail">[x]</button>
+</dialog>
+<script>
+    const modal15 = document.getElementById('mValidaEmail');
+    const btnAbrir15 = document.getElementById('abrirValidaEmail');
+    const btnFechar15 = document.getElementById('fecharValidaEmail');
+    btnAbrir15.addEventListener('click', () => {
+    modal15.showModal();
+    });
+    btnFechar15.addEventListener('click', () => {
+    modal15.close();
+    });
+</script>
+
+
+<dialog id="mVazouX" class="dialog-instr">
+    <p>VAZOU X?</p>
+    <p>Verifica se o usuário do X teve seus dados vazados.</p>
+    <button id="fecharVazouX">[x]</button>
+</dialog>
+<script>
+    const modal16 = document.getElementById('mVazouX');
+    const btnAbrir16 = document.getElementById('abrirVazouX');
+    const btnFechar16 = document.getElementById('fecharVazouX');
+    btnAbrir16.addEventListener('click', () => {
+    modal16.showModal();
+    });
+    btnFechar16.addEventListener('click', () => {
+    modal16.close();
+    });
+</script>
+
+<dialog id="mVerEmail" class="dialog-instr">
+    <p>HUNTER.IO</p>
+    <p>Encontrar, verificar e gerenciar contatos de email de profissionais/empresas.</p>
+    <button id="fecharVerEmail">[x]</button>
+</dialog>
+<script>
+    const modal17 = document.getElementById('mVerEmail');
+    const btnAbrir17 = document.getElementById('abrirVerEmail');
+    const btnFechar17 = document.getElementById('fecharVerEmail');
+    btnAbrir17.addEventListener('click', () => {
+    modal17.showModal();
+    });
+    btnFechar17.addEventListener('click', () => {
+    modal17.close();
+    });
+</script>
+
+<dialog id="mWebRecorder" class="dialog-instr">
+    <p>SALVAR WEB</p>
+    <p>Salvar sites enquanto navega através da instalação de plugin ou aplicativo desktop.</p>
+    <button id="fecharWebRecorder">[x]</button>
+</dialog>
+<script>
+    const modal18 = document.getElementById('mWebRecorder');
+    const btnAbrir18 = document.getElementById('abrirWebRecorder');
+    const btnFechar18 = document.getElementById('fecharWebRecorder');
+    btnAbrir18.addEventListener('click', () => {
+    modal18.showModal();
+    });
+    btnFechar18.addEventListener('click', () => {
+    modal18.close();
+    });
+</script>
+
+<dialog id="mUrlMalware" class="dialog-instr">
+    <p>VER URL</p>
+    <p>Verifica em uma base de dados se uma url é maliciosa.</p>
+    <button id="fecharUrlMalware">[x]</button>
+</dialog>
+<script>
+    const modal19 = document.getElementById('mUrlMalware');
+    const btnAbrir19 = document.getElementById('abrirUrlMalware');
+    const btnFechar19 = document.getElementById('fecharUrlMalware');
+    btnAbrir19.addEventListener('click', () => {
+    modal19.showModal();
+    });
+    btnFechar19.addEventListener('click', () => {
+    modal19.close();
+    });    
+</script>
+
+<dialog id="mVerifact" class="dialog-instr">
+    <p>VERIFACT</p>
+    <p>Registre provas da internet com validade jurídica. A Verifact® é uma alternativa moderna à ata notarial para a coleta de provas online.</p>
+    <button id="fecharVerifact">[x]</button>
+</dialog>
+<script>
+    const modal20 = document.getElementById('mVerifact');
+    const btnAbrir20 = document.getElementById('abrirVerifact');
+    const btnFechar20 = document.getElementById('fecharVerifact');
+    btnAbrir20.addEventListener('click', () => {
+    modal20.showModal();
+    });
+    btnFechar20.addEventListener('click', () => {
+    modal20.close();
+    });    
+</script>
+
+
+<script>
+  function cnpja() {
+    window.open("https://cnpja.com/", "_blank");
+  }
+    function email_vazou() {
+    window.open("https://haveibeenpwned.com/", "_blank");
+  }
+  function epieos(){
+    window.open("https://epieos.com/", "_blank");
+  }
+  function escavador(){
+    window.open("https://www.escavador.com/", "_blank");
+  }
+  function valida_email(){
+    window.open("https://www.skymem.info/", "_blank");
+  }
+  function google_alerta(){
+    window.open("https://www.google.com.br/alerts", "_blank");
+  }
+  function google_avancado(){
+    window.open("https://www.google.com/advanced_search", "_blank");
+  }
+  function ver_email(){
+    window.open("https://hunter.io/search", "_blank");
+  }
+  function img_google(){
+    window.open("https://images.google.com/", "_blank");
+  }
+  function operadora(){
+    window.open("https://www.qualoperadora.net/", "_blank");
+  }
+  function osint(){
+    window.open("https://osintframework.com/ ", "_blank");
+  }
+  function perfil_insta(){
+    window.open("https://inflact.com/profiles/instagram-viewer/", "_blank");
+  }
+  function procon_sp(){
+    window.open("https://sistemas.procon.sp.gov.br/EVITESITE/LIST/EVITESITES.PHP", "_blank");
+  }
+  function rede_cnpj(){
+    window.open("https://www.redecnpj.com", "_blank");
+  }
+  function registro_br(){
+    window.open("https://registro.br/tecnologia/ferramentas/whois/", "_blank");
+  }
+  function checar_fatos(){
+    window.open("https://www.snopes.com/", "_blank");
+  }
+  function url_img(){
+    window.open("https://tineye.com/", "_blank");
+  }
+  function valida_email(){
+    window.open("https://www.skymem.info/", "_blank");
+  }
+  function vazou_x(){
+    window.open("https://tinfoleak.com/", "_blank");
+  }
+  function web_recorder(){
+    window.open("https://webrecorder.net/archivewebpage/", "_blank");
+  }
+  function dominio(){
+    window.open("https://www.whoxy.com/", "_blank");
+  }
+  function url_malware(){
+    window.open("https://urlhaus.abuse.ch/", "_blank");
+  }
+  function verifact() {
+    window.open("https://www.verifact.com.br/", "_blank");
+  }
+  function saiba_mais() {
+    window.open("https://osmosint.com.br/", "_blank");
+  } 
+  function doacao() {
+    window.open("/doar", "_blank");
+  }
+</script>
+{% endblock %}
+
+
